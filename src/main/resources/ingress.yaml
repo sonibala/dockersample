@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-example-new
+spec:
+  rules:
+  - host: mykube.info
+    http:
+      paths:
+      - path: /greeting
+        backend:
+          serviceName: springboot-k8s
+          servicePort: 80
